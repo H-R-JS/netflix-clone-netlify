@@ -1,0 +1,20 @@
+@import "./index.scss";
+@import "./home.scss";
+@import "./signup.scss";
+@import "./account.scss";
+@import "./trailer.scss";
+
+.navbar {
+  z-index: 10;
+}
+
+.h1-netflix {
+  color: $color-netflix;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: $font-netflix;
+}
+
+.btn-sign-up {
+  background-color: $color-netflix;
+}

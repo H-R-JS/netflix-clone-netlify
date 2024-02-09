@@ -1,0 +1,34 @@
+.section-signup {
+  width: 450px;
+  height: 700px;
+  top: 125px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+}
+
+.err-msg {
+  padding: 10px;
+  color: #fff;
+  background-color: red;
+  text-align: center;
+}
+
+.err-msg-hidden {
+  display: none;
+}
+
+.instructions {
+  font-size: 10px;
+}
+
+.instructions-hidden {
+  display: none;
+}
+
+.input-up {
+  background-color: #26282d;
+}
+
+.btn-up {
+  background: $color-netflix;
+}
