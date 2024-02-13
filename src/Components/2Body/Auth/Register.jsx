@@ -59,11 +59,18 @@ export const Register = () => {
     } else {
       try {
         await axios
-          .post("https://clone-netflix-77383829fc51.herokuapp.com/register", {
-            email,
-            username,
-            password,
-          })
+          .post(
+            "https://clone-netflix-77383829fc51.herokuapp.com/register",
+            {
+              email,
+              username,
+              password,
+            },
+            {
+              headers: { "Content-Type": "application/json" },
+              withCredentials: true,
+            }
+          )
           .then((response) => {
             if (response?.data?.message) {
               return setErrorMsg(`${response?.data?.message}`);
