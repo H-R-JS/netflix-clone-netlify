@@ -29,6 +29,7 @@ export const Login = () => {
         .then((response) => {
           const email = response.data.email;
           const accessToken = response.data.accessToken;
+          console.log(response.data)
           setAuth({ email, accessToken });
         });
     } catch (err) {
