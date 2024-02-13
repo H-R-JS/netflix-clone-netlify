@@ -23,7 +23,7 @@ export const SavedShows = () => {
 
   const deleteData = async (id) => {
     await axios
-      .post("http://localhost:3001/deleteFavorite", { id })
+      .post("https://clone-netflix-77383829fc51.herokuapp.com/deleteFavorite", { id })
       .then(() => {
         getData();
       });
