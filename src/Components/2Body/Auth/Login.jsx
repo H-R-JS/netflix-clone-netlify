@@ -1,9 +1,8 @@
-//import axios from "axios";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/useAuth";
-import axios from "../../API/axios";
-import { BASE_URL } from "../../API/axios.js";
+//import axios from "../../API/axios";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +20,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          "/login",
+          `${process.env.REACT_APP_BASE_URL}/login`,
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
@@ -37,7 +36,7 @@ export const Login = () => {
         });
     } catch (err) {
       console.error(err);
-      setError(`${err.message} + ${process.env.REACT_APP_BASE_URL}`);
+      setError(`${err.message}`);
     }
   };
 
