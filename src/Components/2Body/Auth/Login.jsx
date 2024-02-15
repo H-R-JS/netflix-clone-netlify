@@ -11,7 +11,8 @@ export const Login = () => {
   const { auth, setAuth } = useAuth();
 
   const navigate = useNavigate();
-
+  // localhost:3001
+  //https://clone-netflix-77383829fc51.herokuapp.com
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -23,6 +24,7 @@ export const Login = () => {
           {
             headers: { "Content-Type": "application/json" },
             withCredentials: true,
+            //credentials: "include",
           }
         )
         .then((response) => {
