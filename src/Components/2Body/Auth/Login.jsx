@@ -24,12 +24,17 @@ export const Login = () => {
           {
             headers: { "Content-Type": "application/json" },
             withCredentials: true,
+<<<<<<< HEAD
             //credentials: "include",
+=======
+            credentials: "include",
+>>>>>>> d71b432e2854167ff6af9d273a2555533c9a802b
           }
         )
         .then((response) => {
           const email = response.data.email;
           const accessToken = response.data.accessToken;
+          console.log(response.data)
           setAuth({ email, accessToken });
         });
     } catch (err) {
