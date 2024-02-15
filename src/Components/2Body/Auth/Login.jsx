@@ -20,7 +20,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          `${process.env.REACT_APP_BASE_URL}/login`,
+          `${process.env.production.REACT_APP_BASE_URL}/login`,
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
