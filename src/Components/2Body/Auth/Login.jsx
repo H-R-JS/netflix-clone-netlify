@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/useAuth";
 import axios from "../../API/axios";
+import { BASE_URL } from "../../API/axios.js";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  console.log(BASE_URL);
   const { auth, setAuth } = useAuth();
 
   const navigate = useNavigate();
