@@ -1,8 +1,8 @@
-import axios from "axios";
+//import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/useAuth";
-//import axios from "../../API/axios";
+import axios from "../../API/axios";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          `https://clone-netflix-77383829fc51.herokuapp.com/login`,
+          `/login`,
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
