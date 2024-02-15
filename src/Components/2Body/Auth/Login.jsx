@@ -17,7 +17,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(BASE_URL);
-    setError("BASE_URL");
+    setError("");
     try {
       await axios
         .post(
@@ -37,7 +37,7 @@ export const Login = () => {
         });
     } catch (err) {
       console.error(err);
-      setError(err.message);
+      setError(`${err.message} + ${BASE_URL}`);
     }
   };
 
