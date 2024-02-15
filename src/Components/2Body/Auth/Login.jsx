@@ -9,13 +9,14 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  console.log(BASE_URL);
+
   const { auth, setAuth } = useAuth();
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(BASE_URL);
     setError("");
     try {
       await axios
