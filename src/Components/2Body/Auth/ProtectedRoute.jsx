@@ -5,7 +5,7 @@ import { UserAuth } from "../../Context/AuthContext";
 export const ProtectedRoute = ({ children }) => {
   const { auth } = UserAuth();
 
-  if (!auth || res.sendStatus(404)) {
+  if (!auth) {
     return <Navigate to="/" />;
   } else {
     return children;
