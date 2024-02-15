@@ -37,7 +37,7 @@ export const Login = () => {
         });
     } catch (err) {
       console.error(err);
-      setError(`${err.message} + ${BASE_URL}`);
+      setError(`${err.message} + ${process.env.REACT_APP_BASE_URL}`);
     }
   };
 
