@@ -16,8 +16,8 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(BASE_URL);
-    setError("");
+    // console.log(BASE_URL);
+    setError("BASE_URL");
     try {
       await axios
         .post(
