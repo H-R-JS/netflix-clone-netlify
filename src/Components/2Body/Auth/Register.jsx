@@ -61,7 +61,7 @@ export const Register = () => {
       try {
         await axios
           .post(
-            "https://clone-netflix-77383829fc51.herokuapp.com/register",
+            "/register",
             {
               email,
               username,

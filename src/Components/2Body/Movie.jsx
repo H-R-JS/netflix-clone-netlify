@@ -15,7 +15,7 @@ export const Movie = ({ item }) => {
     const emailUser = auth?.email;
     if (auth?.email) {
       await axios
-        .post("https://clone-netflix-77383829fc51.herokuapp.com/addFavorite", {
+        .post("/addFavorite", {
           emailUser,
           id,
           img,

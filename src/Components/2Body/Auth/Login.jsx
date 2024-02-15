@@ -11,15 +11,14 @@ export const Login = () => {
   const { auth, setAuth } = useAuth();
 
   const navigate = useNavigate();
-  // localhost:3001
-  //https://clone-netflix-77383829fc51.herokuapp.com
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await axios
         .post(
-          "https://clone-netflix-77383829fc51.herokuapp.com/login",
+          "/login",
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
