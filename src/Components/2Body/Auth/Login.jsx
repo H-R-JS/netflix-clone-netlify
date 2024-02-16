@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/useAuth";
+import { BASE_URL } from "../../API/axios.js";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          `${process.env.REACT_APP_BASE_URL}/login`,
+          `${BASE_URL}/login`,
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
