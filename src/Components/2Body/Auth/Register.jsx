@@ -61,7 +61,7 @@ export const Register = () => {
       try {
         await axios
           .post(
-            "/register",
+            `${process.env.REACT_APP_BASE_URL}/register`,
             {
               email,
               username,

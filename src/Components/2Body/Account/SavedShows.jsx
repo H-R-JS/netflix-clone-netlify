@@ -12,7 +12,7 @@ export const SavedShows = () => {
   const email = auth?.email;
   const getData = async () => {
     await axios
-      .post("/dataFavorite", {
+      .post(`${process.env.REACT_APP_BASE_URL}/dataFavorite`, {
         email,
       })
       .then((res) => {
@@ -23,7 +23,7 @@ export const SavedShows = () => {
 
   const deleteData = async (id) => {
     await axios
-      .post("/deleteFavorite", {
+      .post(`${process.env.REACT_APP_BASE_URL}/deleteFavorite`, {
         id,
       })
       .then(() => {

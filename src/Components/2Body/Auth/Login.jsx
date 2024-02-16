@@ -12,8 +12,6 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  const baseURL = process.env.REACT_APP_BASE_URL;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(BASE_URL);
@@ -21,7 +19,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          `${baseURL}/login`,
+          `${process.env.REACT_APP_BASE_URL}/login`,
           { email, password },
           {
             headers: { "Content-Type": "application/json" },

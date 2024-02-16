@@ -15,7 +15,7 @@ export const Movie = ({ item }) => {
     const emailUser = auth?.email;
     if (auth?.email) {
       await axios
-        .post("/addFavorite", {
+        .post(`${process.env.REACT_APP_BASE_URL}/addFavorite`, {
           emailUser,
           id,
           img,
