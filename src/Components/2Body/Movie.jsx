@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaHeart, FaRegHeart, FaPlayCircle } from "react-icons/fa";
 import { useAuth } from "../Context/useAuth";
-import axios from "axios";
+import axios from "../../API/axios";
 
 export const Movie = ({ item }) => {
   const [like, setLike] = useState(false);

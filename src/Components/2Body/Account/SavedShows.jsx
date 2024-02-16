@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import axios from "axios";
+import axios from "../../API/axios";
 import { useAuth } from "../../Context/useAuth";
 
 export const SavedShows = () => {
@@ -12,7 +12,7 @@ export const SavedShows = () => {
   const email = auth?.email;
   const getData = async () => {
     await axios
-      .post("https://clone-netflix-77383829fc51.herokuapp.com/dataFavorite", {
+      .post("/dataFavorite", {
         email,
       })
       .then((res) => {
