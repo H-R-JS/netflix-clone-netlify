@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
+import { BASE_URL } from "../../API/axios.js";
 import { useAuth } from "../../Context/useAuth";
 
 export const SavedShows = () => {
@@ -12,7 +13,7 @@ export const SavedShows = () => {
   const email = auth?.email;
   const getData = async () => {
     await axios
-      .post(`${process.env.REACT_APP_BASE_URL}/dataFavorite`, {
+      .post(`${BASE_URL}/dataFavorite`, {
         email,
       })
       .then((res) => {
@@ -23,7 +24,7 @@ export const SavedShows = () => {
 
   const deleteData = async (id) => {
     await axios
-      .post(`${process.env.REACT_APP_BASE_URL}/deleteFavorite`, {
+      .post(`${BASE_URL}/deleteFavorite`, {
         id,
       })
       .then(() => {

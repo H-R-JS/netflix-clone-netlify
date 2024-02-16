@@ -59,7 +59,7 @@ export const Register = () => {
     if (!V1 || !V2 || !V3) {
       setErrorMsg("Invalid Entry");
     } else {
-      alert(BASE_URL);
+      console.log(BASE_URL);
       try {
         await axios
           .post(
