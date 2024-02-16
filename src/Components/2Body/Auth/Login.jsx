@@ -12,6 +12,8 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
+  const baseURL = process.env.REACT_APP_BASE_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(BASE_URL);
@@ -19,7 +21,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          "https://clone-netflix-77383829fc51.herokuapp.com/login",
+          `${baseURL}/login`,
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
