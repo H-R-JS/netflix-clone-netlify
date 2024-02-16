@@ -19,7 +19,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          "/login",
+          "https://clone-netflix-77383829fc51.herokuapp.com/login",
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
