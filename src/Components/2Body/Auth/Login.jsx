@@ -20,7 +20,7 @@ export const Login = () => {
     try {
       await axios
         .post(
-          `/login`,
+          "/login",
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
