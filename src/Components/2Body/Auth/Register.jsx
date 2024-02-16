@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../../API/axios.js";
 import { Link, useNavigate } from "react-router-dom";
 
 //regex valid
@@ -58,10 +59,11 @@ export const Register = () => {
     if (!V1 || !V2 || !V3) {
       setErrorMsg("Invalid Entry");
     } else {
+      alert(BASE_URL);
       try {
         await axios
           .post(
-            `${process.env.REACT_APP_BASE_URL}/register`,
+            `${BASE_URL}/register`,
             {
               email,
               username,
