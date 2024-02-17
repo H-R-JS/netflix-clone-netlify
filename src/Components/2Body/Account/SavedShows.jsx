@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
-import { BASE_URL } from "../../API/axios.js";
+import { BASE_URL } from "../../API/axios";
 import { useAuth } from "../../Context/useAuth";
 
 export const SavedShows = () => {

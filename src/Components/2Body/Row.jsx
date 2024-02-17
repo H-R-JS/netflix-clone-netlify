@@ -23,7 +23,10 @@ export const Row = ({ title, fetchURL, rowID }) => {
   };
 
   return (
-    <section className="section-row">
+    <section
+      className="section-row mt-4 col-12 align-self-center"
+      style={{ height: "250px" }}
+    >
       <h2 className="text-white p-4">{title}</h2>
       <article className="article-movies position-relative d-flex align-items-center">
         <MdChevronLeft
@@ -33,7 +36,7 @@ export const Row = ({ title, fetchURL, rowID }) => {
         />
         <div
           id={"slider " + rowID}
-          className=" movies-container position-relative w-100 h-100"
+          className="movies-container position-relative w-100 h-100"
         >
           {movies.map((item, index) => {
             return <Movie key={index} item={item} />;
