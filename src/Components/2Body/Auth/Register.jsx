@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 //import "dotenv/config";
-import { BASE_URL } from "../../../App";
+import { BASE_URL } from "../../../App.js";
 import { Link, useNavigate } from "react-router-dom";
 
 //dotenv.config();
