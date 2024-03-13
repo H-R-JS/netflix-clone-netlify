@@ -29,6 +29,7 @@
     "stream-http": "^3.2.0",
     "web-vitals": "^2.1.4"
   },
+  "proxy": "https://clone-netflix-77383829fc51.herokuapp.com",
   "scripts": {
     "start": " react-scripts start",
     "build-dev": "dotenv -e .env.development react-app-rewired build",

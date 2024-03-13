@@ -85,7 +85,7 @@ export const Register = () => {
             }
           });
       } catch (err) {
-        console.error(err);
+        setErrorMsg(`${err.message}`);
       }
     }
   };
