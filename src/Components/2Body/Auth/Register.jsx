@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../../API/axios.js";
+//import "dotenv/config";
+import { BASE_URL } from "../../../App";
 import { Link, useNavigate } from "react-router-dom";
+
+//dotenv.config();
 
 //regex valid
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
@@ -59,7 +62,7 @@ export const Register = () => {
     if (!V1 || !V2 || !V3) {
       setErrorMsg("Invalid Entry");
     } else {
-      console.log(BASE_URL);
+      //console.log(BASE_URL);
       try {
         await axios
           .post(
