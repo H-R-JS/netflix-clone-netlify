@@ -12,10 +12,10 @@ export const Login = () => {
   const { auth, setAuth } = useAuth();
 
   const navigate = useNavigate();
-
+  //console.log(BASE_URL);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(BASE_URL);
+
     setError("");
     try {
       await axios
