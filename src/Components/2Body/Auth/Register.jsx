@@ -29,6 +29,7 @@ export const Register = () => {
   const [focusMPassword, setFocusMPassword] = useState(false);
 
   const [errorMsg, setErrorMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -54,6 +55,7 @@ export const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     // check regex
     const V1 = USER_REGEX.test(username);
     const V2 = PWD_REGEX.test(password);
@@ -78,6 +80,7 @@ export const Register = () => {
             }
           )
           .then((response) => {
+            setLoading(false);
             if (response?.data?.message) {
               return setErrorMsg(`${response?.data?.message}`);
             } else {
@@ -85,6 +88,8 @@ export const Register = () => {
             }
           });
       } catch (err) {
+        console.error(err);
+        setLoading(false);
         setErrorMsg(`${err.message}`);
       }
     }
@@ -169,9 +174,16 @@ export const Register = () => {
             placeholder="Confirm password"
             aria-invalid={validMPassword ? "true" : "false"}
           />
-          <button className="btn-up rounded py-3 my-5 text-white ">
-            Sign Up
-          </button>
+          {loading == true ? (
+            <button className="btn-up rounded py-3 my-5 text-white ">
+              Loading ...
+            </button>
+          ) : (
+            <button className="btn-up rounded py-3 my-5 text-white ">
+              Sign Up
+            </button>
+          )}
+
           <div className="d-flex justify-content-evenly align-items-center text-secondary">
             <span className="text-secondary">
               Already subscribed to Netflix ?

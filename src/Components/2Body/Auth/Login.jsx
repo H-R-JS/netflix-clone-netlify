@@ -7,6 +7,7 @@ import { BASE_URL } from "../../../App.js";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const { auth, setAuth } = useAuth();
@@ -15,7 +16,7 @@ export const Login = () => {
   //console.log(BASE_URL);
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     setError("");
     try {
       await axios
@@ -29,6 +30,7 @@ export const Login = () => {
           }
         )
         .then((response) => {
+          setLoading(false);
           const email = response.data.email;
           const accessToken = response.data.accessToken;
           console.log(response.data);
@@ -36,6 +38,7 @@ export const Login = () => {
         });
     } catch (err) {
       console.error(err);
+      setLoading(false);
       setError(`${err.message}`);
     }
   };
@@ -70,9 +73,16 @@ export const Login = () => {
             placeholder="Password"
             autoComplete="current-password"
           />
-          <button className="btn-up rounded py-3 my-5 text-white ">
-            Sign In
-          </button>
+          {loading == true ? (
+            <button className="btn-up rounded py-3 my-5 text-white ">
+              Loading ...
+            </button>
+          ) : (
+            <button className="btn-up rounded py-3 my-5 text-white ">
+              Sign In
+            </button>
+          )}
+
           <p className="py-4">
             <span className="text-secondary">New to Netflix ?</span>{" "}
             <Link to="/register" className="text-white">
